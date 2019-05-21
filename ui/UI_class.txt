@@ -1,0 +1,64 @@
+package com.jdbc;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class UI  extends  JFrame {
+	
+  JLabel jlabelId,jlabelTitle,jlabelBody;
+  JPanel jpanel;
+  JTextField jtextId,jtextTitle,jtextBody;
+  JButton jbuttonSave,jbuttonExit;
+  
+  public UI()
+  {
+	  setTitle("UI JDBC");
+	  setSize(600,500);
+	  setLocationRelativeTo(null);
+	  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  
+	  jpanel = new JPanel();
+	  jpanel.setLayout(new FlowLayout(FlowLayout.CENTER,10,30));
+	  jlabelId = new JLabel("Id");
+	  jlabelTitle = new JLabel("Title");
+	  jlabelBody = new JLabel("Body");
+	  
+	  jtextId = new JTextField(10);
+	  jtextTitle = new JTextField(10);
+	  jtextBody = new JTextField(10);
+	  
+	  jbuttonSave = new JButton("Save");
+	  jbuttonExit = new JButton("Exit");
+	  
+	  jpanel.add(jlabelId);
+	  jpanel.add(jtextId);
+	  jpanel.add(jlabelTitle);
+	  jpanel.add(jtextTitle);
+	  jpanel.add(jlabelBody);
+	  jpanel.add(jtextBody);
+	  jpanel.add(jtextBody);
+	  jpanel.add(jbuttonSave);
+	  jpanel.add(jbuttonExit);
+	  add(jpanel);
+	  
+	  jbuttonSave.addActionListener((e) ->{
+	   System.out.println(jtextId.getText());
+	   JOptionPane.showMessageDialog(null,"saved","pop up",0);
+	  });
+	  
+	  
+	  jbuttonExit.addActionListener((e) ->{
+		   System.exit(0);
+		  });
+	   setVisible(true);
+		  
+	  
+  }
+
+}
